@@ -1,3 +1,4 @@
+//@ts-nocheck
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,8 +10,27 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-  		colors: {
-  			background: 'hsl(var(--background))',
+		animation: {
+			spotlight: "spotlight 2s ease .75s 1 forwards",
+		  },
+		  keyframes: {
+			spotlight: {
+			  "0%": {
+				opacity: 0,
+				transform: "translate(-72%, -62%) scale(0.5)",
+			  },
+			  "100%": {
+				opacity: 1,
+				transform: "translate(-50%,-40%) scale(1)",
+			  },
+			},
+		  },
+  		colors: { black: {
+			DEFAULT: "#000",
+			100: "#000319",
+			200: "rgba(17, 25, 40, 0.75)",
+			300: "rgba(255, 255, 255, 0.125)",
+		  },	background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
@@ -51,6 +71,7 @@ const config: Config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+		
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
