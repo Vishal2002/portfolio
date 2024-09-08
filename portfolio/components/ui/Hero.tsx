@@ -1,3 +1,4 @@
+//@ts-nocheck
 'use client'
 
 import React from 'react';
@@ -13,7 +14,7 @@ const words = [
   { text: "matters.", className: "text-blue-500" },
 ];
 
-const Hero = () => {
+const Hero = ({ onProjectsClick, onContactClick }) => {
   return (
     <div className="min-h-screen w-full text-white flex items-center justify-center relative overflow-hidden py-20">
       <Spotlight
@@ -49,11 +50,13 @@ const Hero = () => {
           >
             <Button
               className="bg-blue-600 rounded-sm hover:bg-blue-700 text-white px-6 py-3"
+              onClick={onProjectsClick}
             >
               View Projects
             </Button>
             <Button
               className="bg-transparent rounded-sm hover:bg-white/10 text-white border border-white px-6 py-3"
+              onClick={onContactClick}
             >
               Contact Me
             </Button>

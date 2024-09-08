@@ -1,54 +1,63 @@
+//@ts-nocheck
+
 'use client'
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { TextRevealCard } from "./text-reveal-cards";
+
+import { FaDocker, FaNodeJs, FaReact, FaAws } from 'react-icons/fa';
+import { SiRedis, SiPostgresql, SiMongodb, SiNextdotjs, SiKubernetes, SiExpress } from 'react-icons/si';
 
 const skillsData = [
-  { name: 'React', level: 90 },
-  { name: 'JavaScript', level: 85 },
-  { name: 'Node.js', level: 80 },
-  { name: 'Python', level: 75 },
-  { name: 'SQL', level: 70 },
-  // Add more skills as needed
+  { name: 'Docker', icon: FaDocker },
+  { name: 'Redis', icon: SiRedis },
+  { name: 'PostgreSQL', icon: SiPostgresql },
+  { name: 'MongoDB', icon: SiMongodb },
+  { name: 'Next.js', icon: SiNextdotjs },
+  { name: 'Node.js', icon: FaNodeJs },
+  { name: 'React', icon: FaReact },
+  { name: 'Kubernetes', icon: SiKubernetes },
+  { name: 'AWS', icon: FaAws },
+  { name: 'Express', icon: SiExpress },
 ];
 
-const SkillBar = ({ skill, level, index }:{skill:string, level:number, index:number}) => (
-  <motion.div 
-    className="mb-4"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
+const SkillCard = ({ skill, icon: Icon }) => (
+  <TextRevealCard
+    text={skill}
+    revealText={skill}
+    className="w-full h-40"
   >
-    <div className="flex justify-between items-center mb-1">
-      <span className="text-base font-medium text-blue-700 dark:text-white">{skill}</span>
-      <span className="text-sm font-medium text-blue-700 dark:text-white">{level}%</span>
+    <div className="flex flex-col items-center justify-center h-full">
+      <Icon className="text-4xl mb-2" />
+      <span className="text-sm">{skill}</span>
     </div>
-    <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-      <motion.div 
-        className="bg-blue-600 h-2.5 rounded-full"
-        initial={{ width: 0 }}
-        animate={{ width: `${level}%` }}
-        transition={{ duration: 1, ease: "easeOut", delay: index * 0.1 }}
-      />
-    </div>
-  </motion.div>
+  </TextRevealCard>
+  
 );
 
 const Skills = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.h2 
-          className="text-3xl font-extrabold mb-8 text-center"
+          className="text-4xl font-extrabold mb-12 text-center text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My Skills
+          Technology
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {skillsData.map((skill, index) => (
-            <SkillBar key={index} skill={skill.name} level={skill.level} index={index} />
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <SkillCard skill={skill.name} icon={skill.icon} />
+            </motion.div>
           ))}
         </div>
       </div>

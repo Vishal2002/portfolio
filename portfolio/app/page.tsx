@@ -3,8 +3,9 @@ import About from '@/components/ui/About'
 import Contact from '@/components/ui/Contact'
 import Hero from '@/components/ui/Hero'
 import Projects from '@/components/ui/Projects'
-import React from 'react'
+import React,{useRef} from 'react'
 import { FloatingDock } from "@/components/ui/floating-dock";
+import { PiReadCvLogoDuotone } from "react-icons/pi";
 import {
   IconBrandGithub,
   IconBrandX,
@@ -30,6 +31,13 @@ const links = [
     href: "https://www.linkedin.com/in/vishal-sharma-b330aa1ba/",
   },
   {
+    title: "Resume",
+    icon: (
+      <PiReadCvLogoDuotone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+    ),
+    href: "https://drive.google.com/file/d/1gNBXB6OwLmCiUXJ4bzcwHepX6L5qtqnh/view?usp=sharing",
+  },
+  {
     title: "Hashnode",
     icon: (
       <Image
@@ -52,10 +60,23 @@ const links = [
 ];
 
 const Page = () => {
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const scrollToSection = (ref:any) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <main className='bg-black-100 min-h-screen'>
-      <Hero />
+      <Hero 
+        onProjectsClick={() => scrollToSection(projectsRef)}
+        onContactClick={() => scrollToSection(contactRef)}
+      />
       <motion.div
+        ref={aboutRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -63,6 +84,7 @@ const Page = () => {
         <About />
       </motion.div>
       <motion.div
+        ref={skillsRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -70,6 +92,7 @@ const Page = () => {
         <Skills />
       </motion.div>
       <motion.div
+        ref={projectsRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -77,6 +100,7 @@ const Page = () => {
         <Projects />
       </motion.div>
       <motion.div
+        ref={contactRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
