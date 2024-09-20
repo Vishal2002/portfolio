@@ -35,7 +35,7 @@ const links = [
     icon: (
       <PiReadCvLogoDuotone className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://drive.google.com/file/d/1gNBXB6OwLmCiUXJ4bzcwHepX6L5qtqnh/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1Y6Z6ayOBmxmHDM5VxdRKRCyUZNP60ZJ_/view?usp=sharing",
   },
   {
     title: "Hashnode",
