@@ -29,6 +29,24 @@ const projects = [
     image: "https://i.ibb.co/HTW7Td6/Screenshot-2024-08-13-015144.png",
     visit: "https://github.com/Vishal2002/CardioClarity"
   },
+  {
+    title: "Hero Junction",
+    description: "Create Awesome Hero Sections for your Startup",
+    image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1732114336/Screenshot_2024-11-20_202207_yc4ivz.png",
+    visit: "herojunction.vercel.app"
+  },
+  {
+    title: "Collab Roulette",
+    description: "Hangout with Twitch Streamers",
+    image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1732114560/Screenshot_2024-10-21_132418_djxfxy.png",
+    visit: "https://collab-roulette.vercel.app/"
+  },
+  {
+    title: "Pixel Bubble",
+    description: "Make your Boring Images to Pixel Art",
+    image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1732114789/Screenshot_2024-11-20_202933_nlnb8c.png",
+    visit: "https://pixelbubble.vercel.app/"
+  },
 ];
 
 const Projects = () => {
