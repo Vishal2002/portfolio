@@ -33,7 +33,7 @@ const projects = [
     title: "Hero Junction",
     description: "Create Awesome Hero Sections for your Startup",
     image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1732114336/Screenshot_2024-11-20_202207_yc4ivz.png",
-    visit: "herojunction.vercel.app"
+    visit: "https://herojunction.vercel.app"
   },
   {
     title: "Collab Roulette",
