@@ -33,7 +33,7 @@ const Hero = ({ onProjectsClick, onContactClick }) => {
             Hi👋,I am Vishal Sharma
           </h1>
           
-          <div className="h-20 mb-4 ">
+          <div className="md:h-20 md:mb-4 ">
             <TypewriterEffectSmooth words={words} />
           </div>
         

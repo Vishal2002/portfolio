@@ -47,6 +47,12 @@ const projects = [
     image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1732114789/Screenshot_2024-11-20_202933_nlnb8c.png",
     visit: "https://pixelbubble.vercel.app/"
   },
+  {
+    title: "Avant Greens",
+    description: "Making sustainable fashion the new normal",
+    image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1739882448/Screenshot_2025-02-18_181020_k0z0py.png",
+    visit: "https://avant-green.com/"
+  },
 ];
 
 const Projects = () => {
@@ -60,7 +66,7 @@ const Projects = () => {
       >
         My Projects
       </motion.h2>
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="flex mx-3 md:mx-0 flex-wrap justify-center gap-8">
         {projects.map((project, index) => (
           <CardContainer key={index} className="inter-var">
             <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
