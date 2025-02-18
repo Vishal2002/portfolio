@@ -6,6 +6,12 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from 'next/link';
 const projects = [
   {
+    title: "Avant Greens",
+    description: "Making sustainable fashion the new normal",
+    image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1739882448/Screenshot_2025-02-18_181020_k0z0py.png",
+    visit: "https://avant-green.com/"
+  },
+  {
     title: "Logarithm",
     description: "AI based Mock Interview Platform",
     image: "https://i.ibb.co/gFRxdXZ/image.png",
@@ -46,13 +52,8 @@ const projects = [
     description: "Make your Boring Images to Pixel Art",
     image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1732114789/Screenshot_2024-11-20_202933_nlnb8c.png",
     visit: "https://pixelbubble.vercel.app/"
-  },
-  {
-    title: "Avant Greens",
-    description: "Making sustainable fashion the new normal",
-    image: "https://res.cloudinary.com/di2gmbyng/image/upload/v1739882448/Screenshot_2025-02-18_181020_k0z0py.png",
-    visit: "https://avant-green.com/"
-  },
+  }
+  
 ];
 
 const Projects = () => {
